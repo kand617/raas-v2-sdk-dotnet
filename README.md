@@ -1,5 +1,9 @@
 # Getting started
 
+## How to Use
+You can add this SDK to your project via NuGet
+```Install-Package TangoCard.RaaSV2 -Pre```
+
 ## How to Build
 
 The generated code uses a few NuGet Packages e.g., Newtonsoft.Json, UniRest,
