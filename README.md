@@ -1,9 +1,5 @@
 # Getting started
 
-## How to Use
-You can add this SDK to your project via NuGet
-```Install-Package TangoCard.RaaSV2 -Pre```
-
 ## How to Build
 
 The generated code uses a few NuGet Packages e.g., Newtonsoft.Json, UniRest,
@@ -12,50 +8,50 @@ added as in the packages.config file. If the automatic NuGet package restore
 is enabled, these dependencies will be installed automatically. Therefore,
 you will need internet access for build.
 
-1. Open the solution (RaaSV2.sln) file.
+1. Open the solution (Raas.sln) file.
 2. Invoke the build process using `Ctrl+Shift+B` shortcut key or using the `Build` menu as shown below.
 
-![Building SDK using Visual Studio](https://apidocs.io/illustration/cs?step=buildSDK&workspaceFolder=RaaSV2-CSharp&workspaceName=RaaSV2&projectName=RaaSV2.PCL)
+![Building SDK using Visual Studio](https://apidocs.io/illustration/cs?step=buildSDK&workspaceFolder=Raas-CSharp&workspaceName=Raas&projectName=Raas.PCL)
 
 ## How to Use
 
 The build process generates a portable class library, which can be used like a normal class library. The generated library is compatible with Windows Forms, Windows RT, Windows Phone 8,
 Silverlight 5, Xamarin iOS, Xamarin Android and Mono. More information on how to use can be found at the [MSDN Portable Class Libraries documentation](http://msdn.microsoft.com/en-us/library/vstudio/gg597391%28v=vs.100%29.aspx).
 
-The following section explains how to use the RaaSV2 library in a new console project.
+The following section explains how to use the Raas library in a new console project.
 
 ### 1. Starting a new project
 
 For starting a new project, right click on the current solution from the *solution explorer* and choose  ``` Add -> New Project ```.
 
-![Add a new project in the existing solution using Visual Studio](https://apidocs.io/illustration/cs?step=addProject&workspaceFolder=RaaSV2-CSharp&workspaceName=RaaSV2&projectName=RaaSV2.PCL)
+![Add a new project in the existing solution using Visual Studio](https://apidocs.io/illustration/cs?step=addProject&workspaceFolder=Raas-CSharp&workspaceName=Raas&projectName=Raas.PCL)
 
 Next, choose "Console Application", provide a ``` TestConsoleProject ``` as the project name and click ``` OK ```.
 
-![Create a new console project using Visual Studio](https://apidocs.io/illustration/cs?step=createProject&workspaceFolder=RaaSV2-CSharp&workspaceName=RaaSV2&projectName=RaaSV2.PCL)
+![Create a new console project using Visual Studio](https://apidocs.io/illustration/cs?step=createProject&workspaceFolder=Raas-CSharp&workspaceName=Raas&projectName=Raas.PCL)
 
 ### 2. Set as startup project
 
 The new console project is the entry point for the eventual execution. This requires us to set the ``` TestConsoleProject ``` as the start-up project. To do this, right-click on the  ``` TestConsoleProject ``` and choose  ``` Set as StartUp Project ``` form the context menu.
 
-![Set the new cosole project as the start up project](https://apidocs.io/illustration/cs?step=setStartup&workspaceFolder=RaaSV2-CSharp&workspaceName=RaaSV2&projectName=RaaSV2.PCL)
+![Set the new cosole project as the start up project](https://apidocs.io/illustration/cs?step=setStartup&workspaceFolder=Raas-CSharp&workspaceName=Raas&projectName=Raas.PCL)
 
 ### 3. Add reference of the library project
 
-In order to use the RaaSV2 library in the new project, first we must add a projet reference to the ``` TestConsoleProject ```. First, right click on the ``` References ``` node in the *solution explorer* and click ``` Add Reference... ```.
+In order to use the Raas library in the new project, first we must add a projet reference to the ``` TestConsoleProject ```. First, right click on the ``` References ``` node in the *solution explorer* and click ``` Add Reference... ```.
 
-![Open references of the TestConsoleProject](https://apidocs.io/illustration/cs?step=addReference&workspaceFolder=RaaSV2-CSharp&workspaceName=RaaSV2&projectName=RaaSV2.PCL)
+![Open references of the TestConsoleProject](https://apidocs.io/illustration/cs?step=addReference&workspaceFolder=Raas-CSharp&workspaceName=Raas&projectName=Raas.PCL)
 
-Next, a window will be displayed where we must set the ``` checkbox ``` on ``` RaaSV2.PCL ``` and click ``` OK ```. By doing this, we have added a reference of the ```RaaSV2.PCL``` project into the new ``` TestConsoleProject ```.
+Next, a window will be displayed where we must set the ``` checkbox ``` on ``` Raas.PCL ``` and click ``` OK ```. By doing this, we have added a reference of the ```Raas.PCL``` project into the new ``` TestConsoleProject ```.
 
-![Add a reference to the TestConsoleProject](https://apidocs.io/illustration/cs?step=createReference&workspaceFolder=RaaSV2-CSharp&workspaceName=RaaSV2&projectName=RaaSV2.PCL)
+![Add a reference to the TestConsoleProject](https://apidocs.io/illustration/cs?step=createReference&workspaceFolder=Raas-CSharp&workspaceName=Raas&projectName=Raas.PCL)
 
 ### 4. Write sample code
 
 Once the ``` TestConsoleProject ``` is created, a file named ``` Program.cs ``` will be visible in the *solution explorer* with an empty ``` Main ``` method. This is the entry point for the execution of the entire solution.
 Here, you can add code to initialize the client library and acquire the instance of a *Controller* class. Sample code to initialize the client library and using controller methods is given in the subsequent sections.
 
-![Add a reference to the TestConsoleProject](https://apidocs.io/illustration/cs?step=addCode&workspaceFolder=RaaSV2-CSharp&workspaceName=RaaSV2&projectName=RaaSV2.PCL)
+![Add a reference to the TestConsoleProject](https://apidocs.io/illustration/cs?step=addCode&workspaceFolder=Raas-CSharp&workspaceName=Raas&projectName=Raas.PCL)
 
 ## How to Test
 
@@ -83,12 +79,12 @@ API client can be initialized as following.
 string platformName = "QAPlatform2"; // RaaS v2 API Platform Name
 string platformKey = "apYPfT6HNONpDRUj3CLGWYt7gvIHONpDRUYPfT6Hj"; // RaaS v2 API Platform Key
 
-RaaSV2Client client = new RaaSV2Client(platformName, platformKey);
+RaasClient client = new RaasClient(platformName, platformKey);
 ```
 
-## Class Reference
+# Class Reference
 
-### <a name="list_of_controllers"></a>List of Controllers
+## <a name="list_of_controllers"></a>List of Controllers
 
 * [AccountsController](#accounts_controller)
 * [OrdersController](#orders_controller)
@@ -97,9 +93,9 @@ RaaSV2Client client = new RaaSV2Client(platformName, platformKey);
 * [StatusController](#status_controller)
 * [CustomersController](#customers_controller)
 
-### <a name="accounts_controller"></a>![Class: ](https://apidocs.io/img/class.png "TangoCard.RaaSv2.Controllers.AccountsController") AccountsController
+## <a name="accounts_controller"></a>![Class: ](https://apidocs.io/img/class.png "TangoCard.Raas.Controllers.AccountsController") AccountsController
 
-#### Get singleton instance
+### Get singleton instance
 
 The singleton instance of the ``` AccountsController ``` class can be accessed from the API Client.
 
@@ -107,7 +103,7 @@ The singleton instance of the ``` AccountsController ``` class can be accessed f
 AccountsController accounts = client.Accounts;
 ```
 
-#### <a name="get_accounts_by_customer"></a>![Method: ](https://apidocs.io/img/method.png "TangoCard.RaaSv2.Controllers.AccountsController.GetAccountsByCustomer") GetAccountsByCustomer
+### <a name="get_accounts_by_customer"></a>![Method: ](https://apidocs.io/img/method.png "TangoCard.Raas.Controllers.AccountsController.GetAccountsByCustomer") GetAccountsByCustomer
 
 > Gets a list of accounts for a given customer
 
@@ -133,7 +129,7 @@ List<Models.AccountSummaryModel> result = await accounts.GetAccountsByCustomer(c
 ```
 
 
-#### <a name="get_account"></a>![Method: ](https://apidocs.io/img/method.png "TangoCard.RaaSv2.Controllers.AccountsController.GetAccount") GetAccount
+### <a name="get_account"></a>![Method: ](https://apidocs.io/img/method.png "TangoCard.Raas.Controllers.AccountsController.GetAccount") GetAccount
 
 > Get an account
 
@@ -159,7 +155,7 @@ Models.AccountModel result = await accounts.GetAccount(accountIdentifier);
 ```
 
 
-#### <a name="create_account"></a>![Method: ](https://apidocs.io/img/method.png "TangoCard.RaaSv2.Controllers.AccountsController.CreateAccount") CreateAccount
+### <a name="create_account"></a>![Method: ](https://apidocs.io/img/method.png "TangoCard.Raas.Controllers.AccountsController.CreateAccount") CreateAccount
 
 > Create an account under a given customer
 
@@ -187,7 +183,7 @@ Models.AccountModel result = await accounts.CreateAccount(customerIdentifier, bo
 ```
 
 
-#### <a name="get_all_accounts"></a>![Method: ](https://apidocs.io/img/method.png "TangoCard.RaaSv2.Controllers.AccountsController.GetAllAccounts") GetAllAccounts
+### <a name="get_all_accounts"></a>![Method: ](https://apidocs.io/img/method.png "TangoCard.Raas.Controllers.AccountsController.GetAllAccounts") GetAllAccounts
 
 > Gets all accounts under the platform
 
@@ -207,9 +203,9 @@ List<Models.AccountModel> result = await accounts.GetAllAccounts();
 
 [Back to List of Controllers](#list_of_controllers)
 
-### <a name="orders_controller"></a>![Class: ](https://apidocs.io/img/class.png "TangoCard.RaaSv2.Controllers.OrdersController") OrdersController
+## <a name="orders_controller"></a>![Class: ](https://apidocs.io/img/class.png "TangoCard.Raas.Controllers.OrdersController") OrdersController
 
-#### Get singleton instance
+### Get singleton instance
 
 The singleton instance of the ``` OrdersController ``` class can be accessed from the API Client.
 
@@ -217,7 +213,7 @@ The singleton instance of the ``` OrdersController ``` class can be accessed fro
 OrdersController orders = client.Orders;
 ```
 
-#### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png "TangoCard.RaaSv2.Controllers.OrdersController.CreateOrder") CreateOrder
+### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png "TangoCard.Raas.Controllers.OrdersController.CreateOrder") CreateOrder
 
 > TODO: Add a method description
 
@@ -243,7 +239,7 @@ Models.OrderModel result = await orders.CreateOrder(body);
 ```
 
 
-#### <a name="get_order"></a>![Method: ](https://apidocs.io/img/method.png "TangoCard.RaaSv2.Controllers.OrdersController.GetOrder") GetOrder
+### <a name="get_order"></a>![Method: ](https://apidocs.io/img/method.png "TangoCard.Raas.Controllers.OrdersController.GetOrder") GetOrder
 
 > TODO: Add a method description
 
@@ -269,7 +265,7 @@ Models.OrderModel result = await orders.GetOrder(referenceOrderID);
 ```
 
 
-#### <a name="create_resend_order"></a>![Method: ](https://apidocs.io/img/method.png "TangoCard.RaaSv2.Controllers.OrdersController.CreateResendOrder") CreateResendOrder
+### <a name="create_resend_order"></a>![Method: ](https://apidocs.io/img/method.png "TangoCard.Raas.Controllers.OrdersController.CreateResendOrder") CreateResendOrder
 
 > TODO: Add a method description
 
@@ -295,7 +291,7 @@ Models.ResendOrderResponseModel result = await orders.CreateResendOrder(referenc
 ```
 
 
-#### <a name="get_orders"></a>![Method: ](https://apidocs.io/img/method.png "TangoCard.RaaSv2.Controllers.OrdersController.GetOrders") GetOrders
+### <a name="get_orders"></a>![Method: ](https://apidocs.io/img/method.png "TangoCard.Raas.Controllers.OrdersController.GetOrders") GetOrders
 
 > TODO: Add a method description
 
@@ -337,10 +333,10 @@ collect.StartDate = startDate;
 DateTime? endDate = DateTime.Now();
 collect.EndDate = endDate;
 
-int? elementsPerBlock = 247;
+int? elementsPerBlock = 59;
 collect.ElementsPerBlock = elementsPerBlock;
 
-int? page = 247;
+int? page = 59;
 collect.Page = page;
 
 
@@ -351,9 +347,9 @@ Models.GetOrdersResponseModel result = await orders.GetOrders(collect);
 
 [Back to List of Controllers](#list_of_controllers)
 
-### <a name="catalog_controller"></a>![Class: ](https://apidocs.io/img/class.png "TangoCard.RaaSv2.Controllers.CatalogController") CatalogController
+## <a name="catalog_controller"></a>![Class: ](https://apidocs.io/img/class.png "TangoCard.Raas.Controllers.CatalogController") CatalogController
 
-#### Get singleton instance
+### Get singleton instance
 
 The singleton instance of the ``` CatalogController ``` class can be accessed from the API Client.
 
@@ -361,7 +357,7 @@ The singleton instance of the ``` CatalogController ``` class can be accessed fr
 CatalogController catalog = client.Catalog;
 ```
 
-#### <a name="get_catalog"></a>![Method: ](https://apidocs.io/img/method.png "TangoCard.RaaSv2.Controllers.CatalogController.GetCatalog") GetCatalog
+### <a name="get_catalog"></a>![Method: ](https://apidocs.io/img/method.png "TangoCard.Raas.Controllers.CatalogController.GetCatalog") GetCatalog
 
 > Get Catalog
 
@@ -381,9 +377,9 @@ Models.CatalogModel result = await catalog.GetCatalog();
 
 [Back to List of Controllers](#list_of_controllers)
 
-### <a name="exchange_rates_controller"></a>![Class: ](https://apidocs.io/img/class.png "TangoCard.RaaSv2.Controllers.ExchangeRatesController") ExchangeRatesController
+## <a name="exchange_rates_controller"></a>![Class: ](https://apidocs.io/img/class.png "TangoCard.Raas.Controllers.ExchangeRatesController") ExchangeRatesController
 
-#### Get singleton instance
+### Get singleton instance
 
 The singleton instance of the ``` ExchangeRatesController ``` class can be accessed from the API Client.
 
@@ -391,7 +387,7 @@ The singleton instance of the ``` ExchangeRatesController ``` class can be acces
 ExchangeRatesController exchangeRates = client.ExchangeRates;
 ```
 
-#### <a name="get_exchange_rates"></a>![Method: ](https://apidocs.io/img/method.png "TangoCard.RaaSv2.Controllers.ExchangeRatesController.GetExchangeRates") GetExchangeRates
+### <a name="get_exchange_rates"></a>![Method: ](https://apidocs.io/img/method.png "TangoCard.Raas.Controllers.ExchangeRatesController.GetExchangeRates") GetExchangeRates
 
 > Retrieve current exchange rates
 
@@ -411,9 +407,9 @@ await exchangeRates.GetExchangeRates();
 
 [Back to List of Controllers](#list_of_controllers)
 
-### <a name="status_controller"></a>![Class: ](https://apidocs.io/img/class.png "TangoCard.RaaSv2.Controllers.StatusController") StatusController
+## <a name="status_controller"></a>![Class: ](https://apidocs.io/img/class.png "TangoCard.Raas.Controllers.StatusController") StatusController
 
-#### Get singleton instance
+### Get singleton instance
 
 The singleton instance of the ``` StatusController ``` class can be accessed from the API Client.
 
@@ -421,7 +417,7 @@ The singleton instance of the ``` StatusController ``` class can be accessed fro
 StatusController status = client.Status;
 ```
 
-#### <a name="get_system_status"></a>![Method: ](https://apidocs.io/img/method.png "TangoCard.RaaSv2.Controllers.StatusController.GetSystemStatus") GetSystemStatus
+### <a name="get_system_status"></a>![Method: ](https://apidocs.io/img/method.png "TangoCard.Raas.Controllers.StatusController.GetSystemStatus") GetSystemStatus
 
 > *Tags:*  ``` Skips Authentication ``` 
 
@@ -443,9 +439,9 @@ Models.SystemStatusResponseModel result = await status.GetSystemStatus();
 
 [Back to List of Controllers](#list_of_controllers)
 
-### <a name="customers_controller"></a>![Class: ](https://apidocs.io/img/class.png "TangoCard.RaaSv2.Controllers.CustomersController") CustomersController
+## <a name="customers_controller"></a>![Class: ](https://apidocs.io/img/class.png "TangoCard.Raas.Controllers.CustomersController") CustomersController
 
-#### Get singleton instance
+### Get singleton instance
 
 The singleton instance of the ``` CustomersController ``` class can be accessed from the API Client.
 
@@ -453,7 +449,7 @@ The singleton instance of the ``` CustomersController ``` class can be accessed 
 CustomersController customers = client.Customers;
 ```
 
-#### <a name="get_customer"></a>![Method: ](https://apidocs.io/img/method.png "TangoCard.RaaSv2.Controllers.CustomersController.GetCustomer") GetCustomer
+### <a name="get_customer"></a>![Method: ](https://apidocs.io/img/method.png "TangoCard.Raas.Controllers.CustomersController.GetCustomer") GetCustomer
 
 > Get a customer
 
@@ -479,7 +475,7 @@ Models.CustomerModel result = await customers.GetCustomer(customerIdentifier);
 ```
 
 
-#### <a name="create_customer"></a>![Method: ](https://apidocs.io/img/method.png "TangoCard.RaaSv2.Controllers.CustomersController.CreateCustomer") CreateCustomer
+### <a name="create_customer"></a>![Method: ](https://apidocs.io/img/method.png "TangoCard.Raas.Controllers.CustomersController.CreateCustomer") CreateCustomer
 
 > Create a new customer
 
@@ -505,7 +501,7 @@ Models.CustomerModel result = await customers.CreateCustomer(body);
 ```
 
 
-#### <a name="get_all_customers"></a>![Method: ](https://apidocs.io/img/method.png "TangoCard.RaaSv2.Controllers.CustomersController.GetAllCustomers") GetAllCustomers
+### <a name="get_all_customers"></a>![Method: ](https://apidocs.io/img/method.png "TangoCard.Raas.Controllers.CustomersController.GetAllCustomers") GetAllCustomers
 
 > Gets all customers under the platform
 
