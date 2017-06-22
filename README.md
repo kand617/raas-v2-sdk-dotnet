@@ -1,4 +1,7 @@
 # Getting started
+## How to Use
+You can add this SDK to your project via NuGet
+```Install-Package TangoCard.Raas -Pre```
 
 ## How to Build
 
