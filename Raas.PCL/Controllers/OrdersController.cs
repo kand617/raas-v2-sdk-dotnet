@@ -73,7 +73,7 @@ namespace TangoCard.Raas.Controllers
             if (null == body)
                 throw new ArgumentNullException("body", "The parameter \"body\" is a required parameter and cannot be null.");
 
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.GetBaseURI();
 
             //prepare query string for API call
@@ -137,7 +137,7 @@ namespace TangoCard.Raas.Controllers
             if (null == referenceOrderID)
                 throw new ArgumentNullException("referenceOrderID", "The parameter \"referenceOrderID\" is a required parameter and cannot be null.");
 
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.GetBaseURI();
 
             //prepare query string for API call
@@ -203,7 +203,7 @@ namespace TangoCard.Raas.Controllers
             if (null == referenceOrderID)
                 throw new ArgumentNullException("referenceOrderID", "The parameter \"referenceOrderID\" is a required parameter and cannot be null.");
 
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.GetBaseURI();
 
             //prepare query string for API call
@@ -265,7 +265,7 @@ namespace TangoCard.Raas.Controllers
         /// <return>Returns the Models.GetOrdersResponseModel response from the API call</return>
         public async Task<Models.GetOrdersResponseModel> GetOrdersAsync(GetOrdersInput input)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.GetBaseURI();
 
             //prepare query string for API call

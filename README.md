@@ -1,7 +1,7 @@
 # Getting started
 ## How to Use
 You can add this SDK to your project via NuGet
-```Install-Package TangoCard.Raas -Pre```
+```Install-Package TangoCard.Raas```
 
 ## How to Build
 
@@ -523,6 +523,5 @@ List<Models.CustomerModel> result = await customers.GetAllCustomers();
 
 
 [Back to List of Controllers](#list_of_controllers)
-
 
 

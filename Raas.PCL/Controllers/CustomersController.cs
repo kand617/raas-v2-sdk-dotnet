@@ -73,7 +73,7 @@ namespace TangoCard.Raas.Controllers
             if (null == customerIdentifier)
                 throw new ArgumentNullException("customerIdentifier", "The parameter \"customerIdentifier\" is a required parameter and cannot be null.");
 
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.GetBaseURI();
 
             //prepare query string for API call
@@ -139,7 +139,7 @@ namespace TangoCard.Raas.Controllers
             if (null == body)
                 throw new ArgumentNullException("body", "The parameter \"body\" is a required parameter and cannot be null.");
 
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.GetBaseURI();
 
             //prepare query string for API call
@@ -197,7 +197,7 @@ namespace TangoCard.Raas.Controllers
         /// <return>Returns the List<Models.CustomerModel> response from the API call</return>
         public async Task<List<Models.CustomerModel>> GetAllCustomersAsync()
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.GetBaseURI();
 
             //prepare query string for API call

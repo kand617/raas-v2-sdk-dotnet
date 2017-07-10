@@ -220,15 +220,15 @@ namespace TangoCard.Raas.Utilities
 
             string format = string.Empty;
             if (fmt == ArrayDeserialization.UnIndexed)
-                format = $"{key}[]={{0}}{{1}}";
+                format = String.Format("{0}[]={{0}}{{1}}", key);
             else if (fmt == ArrayDeserialization.Indexed)
-                format = $"{key}[{{2}}]={{0}}{{1}}";
+                format = String.Format("{0}[{{2}}]={{0}}{{1}}", key);
             else if (fmt == ArrayDeserialization.Plain)
-                format = $"{key}={{0}}{{1}}";
+                format = String.Format("{0}={{0}}{{1}}", key);
             else if (fmt == ArrayDeserialization.Csv || fmt == ArrayDeserialization.Psv ||
                      fmt == ArrayDeserialization.Tsv)
             {
-                builder.Append($"{key}=");
+                builder.Append(String.Format("{0}=", key));
                 format = "{0}{1}";
             }
             else
@@ -362,7 +362,9 @@ namespace TangoCard.Raas.Utilities
             else if (value is DateTime)
             {
                 string convertedValue = null;
-                var pInfo = propInfo?.GetCustomAttributes(true);
+                object[] pInfo = null;
+                if(propInfo!=null)
+                    pInfo = propInfo.GetCustomAttributes(true);
                 if (pInfo != null)
                 {
                     foreach (object attr in pInfo)

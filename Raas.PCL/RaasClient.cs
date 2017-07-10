@@ -6,6 +6,7 @@
 using System;
 using TangoCard.Raas.Controllers;
 using TangoCard.Raas.Http.Client;
+using TangoCard.Raas.Utilities;
 
 namespace TangoCard.Raas
 {
@@ -91,7 +92,7 @@ namespace TangoCard.Raas
                 BaseController.ClientInstance = value;
             }        
         }
-        
+        #region Constructors
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -105,5 +106,6 @@ namespace TangoCard.Raas
             Configuration.PlatformName = platformName;
             Configuration.PlatformKey = platformKey;
         }
+        #endregion
     }
 }

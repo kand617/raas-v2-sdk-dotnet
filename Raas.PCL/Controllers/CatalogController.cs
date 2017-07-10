@@ -67,7 +67,7 @@ namespace TangoCard.Raas.Controllers
         /// <return>Returns the Models.CatalogModel response from the API call</return>
         public async Task<Models.CatalogModel> GetCatalogAsync()
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.GetBaseURI();
 
             //prepare query string for API call

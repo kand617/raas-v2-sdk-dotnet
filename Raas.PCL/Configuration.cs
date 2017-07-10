@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using System.Text;
-using TangoCard.Raas.Models;
 using TangoCard.Raas.Utilities;
-
+using TangoCard.Raas.Models;
 namespace TangoCard.Raas
 {
     public partial class Configuration
     {
+
         public enum Environments
         {
             //Sandbox (Fake) Environment
