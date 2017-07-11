@@ -1,4 +1,7 @@
 # Getting started
+
+With this RESTful API you can integrate a global reward or incentive program into your app or platform. If you have any questions or if you'd like to receive your own credentials, please contact us at devsupport@tangocard.com.
+
 ## How to Use
 You can add this SDK to your project via NuGet
 ```Install-Package TangoCard.Raas```
@@ -336,10 +339,10 @@ collect.StartDate = startDate;
 DateTime? endDate = DateTime.Now();
 collect.EndDate = endDate;
 
-int? elementsPerBlock = 59;
+int? elementsPerBlock = 244;
 collect.ElementsPerBlock = elementsPerBlock;
 
-int? page = 59;
+int? page = 244;
 collect.Page = page;
 
 
@@ -523,5 +526,6 @@ List<Models.CustomerModel> result = await customers.GetAllCustomers();
 
 
 [Back to List of Controllers](#list_of_controllers)
+
 
 
