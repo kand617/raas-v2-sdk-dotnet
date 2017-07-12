@@ -51,40 +51,28 @@ namespace TangoCard.Raas.Controllers
         #endregion Singleton Pattern
 
         /// <summary>
-        /// Get a customer
+        /// Gets all customers under the platform
         /// </summary>
-        /// <param name="customerIdentifier">Required parameter: Customer Identifier</param>
-        /// <return>Returns the Models.CustomerModel response from the API call</return>
-        public Models.CustomerModel GetCustomer(string customerIdentifier)
+        /// <return>Returns the List<Models.CustomerModel> response from the API call</return>
+        public List<Models.CustomerModel> GetAllCustomers()
         {
-            Task<Models.CustomerModel> t = GetCustomerAsync(customerIdentifier);
+            Task<List<Models.CustomerModel>> t = GetAllCustomersAsync();
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
 
         /// <summary>
-        /// Get a customer
+        /// Gets all customers under the platform
         /// </summary>
-        /// <param name="customerIdentifier">Required parameter: Customer Identifier</param>
-        /// <return>Returns the Models.CustomerModel response from the API call</return>
-        public async Task<Models.CustomerModel> GetCustomerAsync(string customerIdentifier)
+        /// <return>Returns the List<Models.CustomerModel> response from the API call</return>
+        public async Task<List<Models.CustomerModel>> GetAllCustomersAsync()
         {
-            //validating required parameters
-            if (null == customerIdentifier)
-                throw new ArgumentNullException("customerIdentifier", "The parameter \"customerIdentifier\" is a required parameter and cannot be null.");
-
             //the base uri for api requests
             string _baseUri = Configuration.GetBaseURI();
 
             //prepare query string for API call
             StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-            _queryBuilder.Append("/customers/{customerIdentifier}");
-
-            //process optional template parameters
-            APIHelper.AppendUrlWithTemplateParameters(_queryBuilder, new Dictionary<string, object>()
-            {
-                { "customerIdentifier", customerIdentifier }
-            });
+            _queryBuilder.Append("/customers");
 
 
             //validate and preprocess url
@@ -108,7 +96,7 @@ namespace TangoCard.Raas.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<Models.CustomerModel>(_response.Body);
+                return APIHelper.JsonDeserialize<List<Models.CustomerModel>>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -181,28 +169,40 @@ namespace TangoCard.Raas.Controllers
         }
 
         /// <summary>
-        /// Gets all customers under the platform
+        /// Get a customer
         /// </summary>
-        /// <return>Returns the List<Models.CustomerModel> response from the API call</return>
-        public List<Models.CustomerModel> GetAllCustomers()
+        /// <param name="customerIdentifier">Required parameter: Customer Identifier</param>
+        /// <return>Returns the Models.CustomerModel response from the API call</return>
+        public Models.CustomerModel GetCustomer(string customerIdentifier)
         {
-            Task<List<Models.CustomerModel>> t = GetAllCustomersAsync();
+            Task<Models.CustomerModel> t = GetCustomerAsync(customerIdentifier);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
 
         /// <summary>
-        /// Gets all customers under the platform
+        /// Get a customer
         /// </summary>
-        /// <return>Returns the List<Models.CustomerModel> response from the API call</return>
-        public async Task<List<Models.CustomerModel>> GetAllCustomersAsync()
+        /// <param name="customerIdentifier">Required parameter: Customer Identifier</param>
+        /// <return>Returns the Models.CustomerModel response from the API call</return>
+        public async Task<Models.CustomerModel> GetCustomerAsync(string customerIdentifier)
         {
+            //validating required parameters
+            if (null == customerIdentifier)
+                throw new ArgumentNullException("customerIdentifier", "The parameter \"customerIdentifier\" is a required parameter and cannot be null.");
+
             //the base uri for api requests
             string _baseUri = Configuration.GetBaseURI();
 
             //prepare query string for API call
             StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-            _queryBuilder.Append("/customers");
+            _queryBuilder.Append("/customers/{customerIdentifier}");
+
+            //process optional template parameters
+            APIHelper.AppendUrlWithTemplateParameters(_queryBuilder, new Dictionary<string, object>()
+            {
+                { "customerIdentifier", customerIdentifier }
+            });
 
 
             //validate and preprocess url
@@ -226,7 +226,7 @@ namespace TangoCard.Raas.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<List<Models.CustomerModel>>(_response.Body);
+                return APIHelper.JsonDeserialize<Models.CustomerModel>(_response.Body);
             }
             catch (Exception _ex)
             {

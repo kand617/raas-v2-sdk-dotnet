@@ -53,11 +53,11 @@ namespace TangoCard.Raas.Controllers
         /// <summary>
         /// TODO: type endpoint description here
         /// </summary>
-        /// <param name="body">Required parameter: Example: </param>
-        /// <return>Returns the Models.OrderModel response from the API call</return>
-        public Models.OrderModel CreateOrder(Models.CreateOrderRequestModel body)
+        /// <param name="referenceOrderID">Required parameter: Example: </param>
+        /// <return>Returns the Models.ResendOrderResponseModel response from the API call</return>
+        public Models.ResendOrderResponseModel CreateResendOrder(string referenceOrderID)
         {
-            Task<Models.OrderModel> t = CreateOrderAsync(body);
+            Task<Models.ResendOrderResponseModel> t = CreateResendOrderAsync(referenceOrderID);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -65,20 +65,26 @@ namespace TangoCard.Raas.Controllers
         /// <summary>
         /// TODO: type endpoint description here
         /// </summary>
-        /// <param name="body">Required parameter: Example: </param>
-        /// <return>Returns the Models.OrderModel response from the API call</return>
-        public async Task<Models.OrderModel> CreateOrderAsync(Models.CreateOrderRequestModel body)
+        /// <param name="referenceOrderID">Required parameter: Example: </param>
+        /// <return>Returns the Models.ResendOrderResponseModel response from the API call</return>
+        public async Task<Models.ResendOrderResponseModel> CreateResendOrderAsync(string referenceOrderID)
         {
             //validating required parameters
-            if (null == body)
-                throw new ArgumentNullException("body", "The parameter \"body\" is a required parameter and cannot be null.");
+            if (null == referenceOrderID)
+                throw new ArgumentNullException("referenceOrderID", "The parameter \"referenceOrderID\" is a required parameter and cannot be null.");
 
             //the base uri for api requests
             string _baseUri = Configuration.GetBaseURI();
 
             //prepare query string for API call
             StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-            _queryBuilder.Append("/orders");
+            _queryBuilder.Append("/orders/{referenceOrderID}/resends");
+
+            //process optional template parameters
+            APIHelper.AppendUrlWithTemplateParameters(_queryBuilder, new Dictionary<string, object>()
+            {
+                { "referenceOrderID", referenceOrderID }
+            });
 
 
             //validate and preprocess url
@@ -88,15 +94,11 @@ namespace TangoCard.Raas.Controllers
             var _headers = new Dictionary<string,string>()
             {
                 { "user-agent", "TangoCardv2NGSDK" },
-                { "accept", "application/json" },
-                { "content-type", "application/json; charset=utf-8" }
+                { "accept", "application/json" }
             };
 
-            //append body params
-            var _body = APIHelper.JsonSerialize(body);
-
             //prepare the API call request to fetch the response
-            HttpRequest _request = ClientInstance.PostBody(_queryUrl, _headers, _body, Configuration.PlatformName, Configuration.PlatformKey);
+            HttpRequest _request = ClientInstance.Post(_queryUrl, _headers, null, Configuration.PlatformName, Configuration.PlatformKey);
 
             //invoke request and get response
             HttpStringResponse _response = (HttpStringResponse) await ClientInstance.ExecuteAsStringAsync(_request).ConfigureAwait(false);
@@ -106,7 +108,7 @@ namespace TangoCard.Raas.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<Models.OrderModel>(_response.Body);
+                return APIHelper.JsonDeserialize<Models.ResendOrderResponseModel>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -183,11 +185,11 @@ namespace TangoCard.Raas.Controllers
         /// <summary>
         /// TODO: type endpoint description here
         /// </summary>
-        /// <param name="referenceOrderID">Required parameter: Example: </param>
-        /// <return>Returns the Models.ResendOrderResponseModel response from the API call</return>
-        public Models.ResendOrderResponseModel CreateResendOrder(string referenceOrderID)
+        /// <param name="body">Required parameter: Example: </param>
+        /// <return>Returns the Models.OrderModel response from the API call</return>
+        public Models.OrderModel CreateOrder(Models.CreateOrderRequestModel body)
         {
-            Task<Models.ResendOrderResponseModel> t = CreateResendOrderAsync(referenceOrderID);
+            Task<Models.OrderModel> t = CreateOrderAsync(body);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -195,26 +197,20 @@ namespace TangoCard.Raas.Controllers
         /// <summary>
         /// TODO: type endpoint description here
         /// </summary>
-        /// <param name="referenceOrderID">Required parameter: Example: </param>
-        /// <return>Returns the Models.ResendOrderResponseModel response from the API call</return>
-        public async Task<Models.ResendOrderResponseModel> CreateResendOrderAsync(string referenceOrderID)
+        /// <param name="body">Required parameter: Example: </param>
+        /// <return>Returns the Models.OrderModel response from the API call</return>
+        public async Task<Models.OrderModel> CreateOrderAsync(Models.CreateOrderRequestModel body)
         {
             //validating required parameters
-            if (null == referenceOrderID)
-                throw new ArgumentNullException("referenceOrderID", "The parameter \"referenceOrderID\" is a required parameter and cannot be null.");
+            if (null == body)
+                throw new ArgumentNullException("body", "The parameter \"body\" is a required parameter and cannot be null.");
 
             //the base uri for api requests
             string _baseUri = Configuration.GetBaseURI();
 
             //prepare query string for API call
             StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-            _queryBuilder.Append("/orders/{referenceOrderID}/resends");
-
-            //process optional template parameters
-            APIHelper.AppendUrlWithTemplateParameters(_queryBuilder, new Dictionary<string, object>()
-            {
-                { "referenceOrderID", referenceOrderID }
-            });
+            _queryBuilder.Append("/orders");
 
 
             //validate and preprocess url
@@ -224,11 +220,15 @@ namespace TangoCard.Raas.Controllers
             var _headers = new Dictionary<string,string>()
             {
                 { "user-agent", "TangoCardv2NGSDK" },
-                { "accept", "application/json" }
+                { "accept", "application/json" },
+                { "content-type", "application/json; charset=utf-8" }
             };
 
+            //append body params
+            var _body = APIHelper.JsonSerialize(body);
+
             //prepare the API call request to fetch the response
-            HttpRequest _request = ClientInstance.Post(_queryUrl, _headers, null, Configuration.PlatformName, Configuration.PlatformKey);
+            HttpRequest _request = ClientInstance.PostBody(_queryUrl, _headers, _body, Configuration.PlatformName, Configuration.PlatformKey);
 
             //invoke request and get response
             HttpStringResponse _response = (HttpStringResponse) await ClientInstance.ExecuteAsStringAsync(_request).ConfigureAwait(false);
@@ -238,7 +238,7 @@ namespace TangoCard.Raas.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<Models.ResendOrderResponseModel>(_response.Body);
+                return APIHelper.JsonDeserialize<Models.OrderModel>(_response.Body);
             }
             catch (Exception _ex)
             {

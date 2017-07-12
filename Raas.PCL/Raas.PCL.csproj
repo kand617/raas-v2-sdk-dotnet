@@ -10,7 +10,7 @@
     <AssemblyName>Raas.PCL</AssemblyName>
     <OutputType>Library</OutputType>
     <OutputPath>bin/DEBUG/</OutputPath>
-    <ProjectGuid>{d8934557-fafd-44fe-a2a0-c0b10d1dc619}</ProjectGuid>
+    <ProjectGuid>{1718ab3e-e6ce-4cc6-b834-c0822407755a}</ProjectGuid>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <NuGetPackageImportStamp>ee2bb91c</NuGetPackageImportStamp>
@@ -74,37 +74,37 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\GetOrdersInput.cs" />
-    <Compile Include="Models\PageModel.cs" />
-    <Compile Include="Models\ExchangeRateModel.cs" />
-    <Compile Include="Models\RewardCredentialModel.cs" />
-    <Compile Include="Models\RewardModel.cs" />
-    <Compile Include="Models\CreateOrderRequestModel.cs" />
-    <Compile Include="Models\ResendOrderResponseModel.cs" />
-    <Compile Include="Models\GetOrdersResponseModel.cs" />
-    <Compile Include="Models\ExchangeRateResponseModel.cs" />
-    <Compile Include="Models\NameEmailModel.cs" />
-    <Compile Include="Models\OrderModel.cs" />
-    <Compile Include="Models\CurrencyBreakdownModel.cs" />
-    <Compile Include="Models\BrandModel.cs" />
-    <Compile Include="Models\CatalogModel.cs" />
-    <Compile Include="Models\SystemStatusResponseModel.cs" />
-    <Compile Include="Models\RaasServerErrorModel.cs" />
-    <Compile Include="Models\CreateAccountRequestModel.cs" />
-    <Compile Include="Models\CreateCustomerRequestModel.cs" />
-    <Compile Include="Models\AccountModel.cs" />
-    <Compile Include="Models\CustomerModel.cs" />
-    <Compile Include="Models\AccountSummaryModel.cs" />
     <Compile Include="Models\ItemModel.cs" />
+    <Compile Include="Models\SystemStatusResponseModel.cs" />
+    <Compile Include="Models\CreateOrderRequestModel.cs" />
+    <Compile Include="Models\AccountSummaryModel.cs" />
+    <Compile Include="Models\CustomerModel.cs" />
+    <Compile Include="Models\AccountModel.cs" />
+    <Compile Include="Models\CurrencyBreakdownModel.cs" />
+    <Compile Include="Models\ExchangeRateModel.cs" />
+    <Compile Include="Models\PageModel.cs" />
+    <Compile Include="Models\BrandModel.cs" />
+    <Compile Include="Models\CreateCustomerRequestModel.cs" />
+    <Compile Include="Models\CreateAccountRequestModel.cs" />
+    <Compile Include="Models\RaasServerErrorModel.cs" />
+    <Compile Include="Models\CatalogModel.cs" />
+    <Compile Include="Models\NameEmailModel.cs" />
+    <Compile Include="Models\ExchangeRateResponseModel.cs" />
+    <Compile Include="Models\GetOrdersResponseModel.cs" />
+    <Compile Include="Models\ResendOrderResponseModel.cs" />
+    <Compile Include="Models\RewardModel.cs" />
+    <Compile Include="Models\RewardCredentialModel.cs" />
+    <Compile Include="Models\OrderModel.cs" />
     <Compile Include="Models\RaasClientErrorModel.cs" />
-    <Compile Include="Exceptions\RaasServerException.cs" />
-    <Compile Include="Exceptions\RaasGenericException.cs" />
     <Compile Include="Exceptions\RaasClientException.cs" />
-    <Compile Include="Controllers\AccountsController.cs" />
-    <Compile Include="Controllers\OrdersController.cs" />
-    <Compile Include="Controllers\CatalogController.cs" />
-    <Compile Include="Controllers\ExchangeRatesController.cs" />
-    <Compile Include="Controllers\StatusController.cs" />
+    <Compile Include="Exceptions\RaasGenericException.cs" />
+    <Compile Include="Exceptions\RaasServerException.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Controllers\AccountsController.cs" />
+    <Compile Include="Controllers\StatusController.cs" />
+    <Compile Include="Controllers\ExchangeRatesController.cs" />
+    <Compile Include="Controllers\CatalogController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Http\Client\IHTTPClient.cs" />
     <Compile Include="Http\Client\UnirestClient.cs" />
     <Compile Include="Http\Client\HttpEventHandlers.cs" />

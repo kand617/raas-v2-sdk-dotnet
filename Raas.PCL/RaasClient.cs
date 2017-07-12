@@ -14,6 +14,17 @@ namespace TangoCard.Raas
     {
 
         /// <summary>
+        /// Singleton access to Customers controller
+        /// </summary>
+        public CustomersController Customers
+        {
+            get
+            {
+                return CustomersController.Instance;
+            }
+        }
+
+        /// <summary>
         /// Singleton access to Accounts controller
         /// </summary>
         public AccountsController Accounts
@@ -21,39 +32,6 @@ namespace TangoCard.Raas
             get
             {
                 return AccountsController.Instance;
-            }
-        }
-
-        /// <summary>
-        /// Singleton access to Orders controller
-        /// </summary>
-        public OrdersController Orders
-        {
-            get
-            {
-                return OrdersController.Instance;
-            }
-        }
-
-        /// <summary>
-        /// Singleton access to Catalog controller
-        /// </summary>
-        public CatalogController Catalog
-        {
-            get
-            {
-                return CatalogController.Instance;
-            }
-        }
-
-        /// <summary>
-        /// Singleton access to ExchangeRates controller
-        /// </summary>
-        public ExchangeRatesController ExchangeRates
-        {
-            get
-            {
-                return ExchangeRatesController.Instance;
             }
         }
 
@@ -69,13 +47,35 @@ namespace TangoCard.Raas
         }
 
         /// <summary>
-        /// Singleton access to Customers controller
+        /// Singleton access to ExchangeRates controller
         /// </summary>
-        public CustomersController Customers
+        public ExchangeRatesController ExchangeRates
         {
             get
             {
-                return CustomersController.Instance;
+                return ExchangeRatesController.Instance;
+            }
+        }
+
+        /// <summary>
+        /// Singleton access to Catalog controller
+        /// </summary>
+        public CatalogController Catalog
+        {
+            get
+            {
+                return CatalogController.Instance;
+            }
+        }
+
+        /// <summary>
+        /// Singleton access to Orders controller
+        /// </summary>
+        public OrdersController Orders
+        {
+            get
+            {
+                return OrdersController.Instance;
             }
         }
         /// <summary>
